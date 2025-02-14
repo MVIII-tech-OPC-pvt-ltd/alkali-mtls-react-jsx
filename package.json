@@ -1,7 +1,7 @@
 {
   "name": "alkali-mtls",
   "private": false,
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Instant project template with in-memory user storage system",
   "type": "module",
   "author": "Avinash (CEO) 😎 <avinashkumar@mviiitech.com>",
