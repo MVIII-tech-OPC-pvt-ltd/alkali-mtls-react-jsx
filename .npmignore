@@ -3,7 +3,6 @@ dist
 build
 src
 public
-docs
 .DS_Store
 .env
 *.log

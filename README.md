@@ -71,3 +71,214 @@ In your `App` component, you are combining these two components to create a stru
 - `AlMNavigationTemplateApp` handles the navigation, displaying different components based on the selected navigation item.
 
 This structure helps in organizing your application into a cohesive layout with easy navigation.
+
+---
+
+### UsersHub Context Documentation 🚀
+
+## Introduction
+
+The `UsersHubContext` provides a way to manage user authentication and user data within your React application. This context includes functionalities for logging in, logging out, and creating new users.
+
+## Setup 🛠️
+
+To use the `UsersHubContext`, you need to wrap your application (or part of it) with the `UsersHubProvider`.
+
+### Example
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { UsersHubProvider } from "./contexts/UsersHub";
+
+ReactDOM.render(
+  <UsersHubProvider>
+    <App />
+  </UsersHubProvider>,
+  document.getElementById("root")
+);
+```
+
+## Usage 📚
+
+You can access the context values using the `useContext` hook.
+
+### Example
+
+```jsx
+import React, { useContext } from "react";
+import { UsersHubContext } from "./contexts/UsersHub";
+
+const AuthPage = () => {
+  const { users, isAuthenticated, login, logout, createNewUser } =
+    useContext(UsersHubContext);
+
+  const handleLogin = () => {
+    const username = "john";
+    const password = "John@123";
+    if (login(username, password)) {
+      console.log("Login successful");
+    } else {
+      console.log("Login failed");
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+    console.log("Logged out");
+  };
+
+  const handleCreateUser = () => {
+    const username = "newuser";
+    const password = "NewUser@123";
+    createNewUser(username, password);
+    console.log("User created");
+  };
+
+  return (
+    <div>
+      <h1>Auth Page</h1>
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleCreateUser}>Create User</button>
+      <div>
+        <h2>Users List</h2>
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>{user.username}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>Authentication Status</h2>
+        <p>{isAuthenticated ? "Authenticated" : "Not Authenticated"}</p>
+      </div>
+    </div>
+  );
+};
+
+export default AuthPage;
+```
+
+## Context Values 📦
+
+- `users`: An array of user objects.
+- `isAuthenticated`: A boolean indicating if a user is authenticated.
+- `login(username, password)`: A function to log in a user.
+- `logout()`: A function to log out the current user.
+- `createNewUser(username, password)`: A function to create a new user.
+
+## Initial Data 🗂️
+
+The context initializes with the following user data:
+
+```json
+[
+  { "id": 452103, "username": "ram", "password": "Ram@123" },
+  { "id": 97301, "username": "john", "password": "John@123" },
+  { "id": 36987, "username": "jane", "password": "Jane@123" },
+  { "id": 840808, "username": "alice", "password": "Alice@123" },
+  { "id": 769999, "username": "bob", "password": "Bob@123" }
+]
+```
+
+## Conclusion 🎉
+
+The `UsersHubContext` is a powerful tool for managing user authentication and user data in your React application. By following the setup and usage instructions, you can easily integrate it into your project.
+
+---
+
+### WareHouse Context Documentation
+
+## Overview
+
+The `WareHouseContext` provides warehouse-related functionalities and state management for your application. It allows you to add, retrieve, update, and delete items in the warehouse, as well as manage items based on user IDs.
+
+## Usage
+
+To use the `WareHouseContext`, wrap your component tree with the `WareHouseProvider`:
+
+````jsx
+import { WareHouseProvider } from './contexts/WareHouse';
+
+function App() {
+  return (
+    <WareHouseProvider>
+      <YourComponent />
+    </WareHouseProvider>
+  );
+}
+
+## API
+
+### WareHouseProvider
+
+The `WareHouseProvider` component provides the context to its children.
+
+#### Props
+
+- **children** (`React.ReactNode`): The child components.
+
+#### Context Methods
+
+- **addItem(item)**
+    - Adds a new item to the warehouse.
+    - **item** (`Object`): The item to be added.
+    - **id** (`string`, optional): The unique identifier of the item. If not provided, a unique ID will be generated.
+    - **userId** (`string`): The ID of the user who owns the item.
+
+- **getItemById(id)**
+    - Retrieves an item by its ID.
+    - **id** (`string`): The unique identifier of the item.
+    - **Returns**: The item with the specified ID, or `undefined` if not found.
+
+- **getItemsByUserId(userId)**
+    - Retrieves items by a user's ID.
+    - **userId** (`string`): The ID of the user.
+    - **Returns**: An array of items owned by the specified user.
+
+- **updateItem(updatedItem)**
+    - Updates an existing item in the warehouse.
+    - **updatedItem** (`Object`): The item with updated properties.
+    - **id** (`string`): The unique identifier of the item to be updated.
+
+- **updateItemsByUserId(userId, updatedItems)**
+    - Updates multiple items for a specific user.
+    - **userId** (`string`): The ID of the user.
+    - **updatedItems** (`Object[]`): An array of updated items.
+
+- **deleteItem(id)**
+    - Deletes an item from the warehouse.
+    - **id** (`string`): The unique identifier of the item to be deleted.
+
+- **deleteItemsByUserId(userId)**
+    - Deletes all items for a specific user.
+    - **userId** (`string`): The ID of the user whose items should be deleted.
+
+### Example
+
+```jsx
+import { WareHouseProvider, useWareHouseContext } from './contexts/WareHouse';
+
+function YourComponent() {
+    const { addItem, getItemById, getItemsByUserId, updateItem, deleteItem } = useWareHouseContext();
+
+    // Example usage of context methods
+    // addItem({ name: 'Item 1', userId: 'user123' });
+    // const item = getItemById('item123');
+    // const userItems = getItemsByUserId('user123');
+    // updateItem({ id: 'item123', name: 'Updated Item 1' });
+    // deleteItem('item123');
+
+    return <div>Your Component</div>;
+}
+
+function App() {
+    return (
+        <WareHouseProvider>
+            <YourComponent />
+        </WareHouseProvider>
+    );
+}
+````
