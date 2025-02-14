@@ -1,7 +1,7 @@
 {
-  "name": "alkali-mtls-react-jsx",
+  "name": "alkali-mtls",
   "private": false,
-  "version": "1.1.5",
+  "version": "1.2.5",
   "description": "Instant project template with in-memory user storage system",
   "type": "module",
   "author": "Avinash (CEO) 😎 <avinashkumar@mviiitech.com>",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
+    "alkali-mtls": "file:",
     "alkali-mtls-react-jsx": "file:",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
