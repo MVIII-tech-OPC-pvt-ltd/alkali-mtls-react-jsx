@@ -1,0 +1,17 @@
+node_modules
+dist
+build
+.DS_Store
+.env
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+.idea/
+.vscode/
+*.iml
+*.sublime-project
+*.sublime-workspace
+App.jsx
+App.css
