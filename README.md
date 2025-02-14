@@ -2,6 +2,21 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## How to use it 👀
+
+---
+
+- install the package `npm i alkali-mtls`
+- install dependencies **Tailwind CSS**
+
+  - `npm install tailwindcss @tailwindcss/vite`
+  - then for further steps follow this official tailwind css website
+  - after installing tailwindcss you can use as example shown below. 😀
+
+- Happy Hacking 🤠🤠🤠🧑‍💻
+
+---
+
 ## Documentation
 
 For more detailed information on specific components and contexts used in this project, refer to the following documentation:
