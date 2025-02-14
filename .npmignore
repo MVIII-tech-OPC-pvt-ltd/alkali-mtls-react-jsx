@@ -1,6 +1,9 @@
 node_modules
 dist
 build
+src
+public
+docs
 .DS_Store
 .env
 *.log
@@ -15,3 +18,4 @@ build
 *.sublime-workspace
 App.jsx
 App.css
+index.html

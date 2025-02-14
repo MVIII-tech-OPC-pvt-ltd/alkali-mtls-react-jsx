@@ -13,9 +13,8 @@ For more detailed information on specific components and contexts used in this p
 ## Example Usage
 
 ```jsx
+import { AlMNavigationTemplateApp, AlMTemplateApp } from "alkali-mtls";
 import "./App.css";
-import AlMNavigationTemplateApp from "./pages/AlMNavigationTemplateApp";
-import AlMTemplateApp from "./pages/AlMTemplateApp";
 
 export default function App() {
   const navItems = [
@@ -27,11 +26,11 @@ export default function App() {
   ];
   return (
     <>
-      <AlMTemplateApp title={"zen cap"}>
+      <AlMTemplateApp title={"your application name here"}>
         {/* <div className="container mx-auto p-4">
-                    <h2 className="text-xl font-bold">Welcome to My Application</h2>
-                    <p>This is the main content of the application.</p>
-                </div> */}
+          <h2 className="text-xl font-bold">Welcome to My Application</h2>
+          <p>This is the main content of the application.</p>
+        </div> */}
         <AlMNavigationTemplateApp navItems={navItems} />
       </AlMTemplateApp>
     </>

@@ -1,6 +1,6 @@
 import './App.css'
-import AlMNavigationTemplateApp from './pages/AlMNavigationTemplateApp';
-import AlMTemplateApp from './pages/AlMTemplateApp';
+import AlMNavigationTemplateApp from '../libs/pages/AlMNavigationTemplateApp';
+import AlMTemplateApp from '../libs/pages/AlMTemplateApp';
 
 export default function App() {
   const navItems = [
