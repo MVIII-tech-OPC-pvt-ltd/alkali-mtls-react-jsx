@@ -49,7 +49,7 @@ export const UsersHubContext = createContext();
  */
 export const UsersHubProvider = ({ children }) => {
     const [users, setUsers] = useState(() => {
-        const storedUsers = localStorage.getItem('users');
+        const storedUsers = localStorage.getItem('amt-users');
         return storedUsers ? JSON.parse(storedUsers) : INITIAL_DATA;
     });
     const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -58,7 +58,7 @@ export const UsersHubProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('amt-users', JSON.stringify(users));
     }, [users]);
 
     useEffect(() => {
