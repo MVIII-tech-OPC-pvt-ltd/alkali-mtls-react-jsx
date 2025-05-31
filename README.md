@@ -1,6 +1,7 @@
 <div align="center">
 
   <h1>Alkali-Mtls React + Vite Template</h1>
+  <a href="https://github.com/MVIII-tech-OPC-pvt-ltd/alkali-mtls-react-jsx" target="_blank">Go to github</a>
   <p>
     <strong>Welcome to the <span style="color:#38bdf8;">Alkali-Mtls</span> React + Vite starter!</strong>
   </p>
