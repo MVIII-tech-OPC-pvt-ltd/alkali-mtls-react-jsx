@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import AlMAuthPage from './AlMAuthPage';
 import { UsersHubContext, UsersHubProvider } from '../contexts/UsersHub';
-import "../styles/styles.css";
-import "../styles/tailwind.css";
 
 /**
  * FixedHeader component renders a fixed header with a gradient background and a title.
@@ -18,27 +16,90 @@ function FixedHeader({ children, title }) {
     const { isAuthenticated, logout } = useContext(UsersHubContext);
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-purple-600 via-blue-500 to-blue-700 text-white shadow-lg z-50">
-                <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                    <h1 className="text-3xl font-extrabold tracking-tight">{title}</h1>
+        <div style={{ minHeight: "100vh", background: "#f9fafb" }}>
+            <header
+                style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    background: "linear-gradient(to right, #7c3aed, #3b82f6, #1e40af)",
+                    color: "#fff",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                    zIndex: 50,
+                }}
+            >
+                <div
+                    style={{
+                        maxWidth: "1120px",
+                        margin: "0 auto",
+                        padding: "16px 24px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <h1
+                        style={{
+                            fontSize: "2rem",
+                            fontWeight: 800,
+                            letterSpacing: "-0.02em",
+                            margin: 0,
+                        }}
+                    >
+                        {title}
+                    </h1>
                     {isAuthenticated && (
                         <button
                             onClick={logout}
-                            className="bg-red-500 hover:bg-red-600 transition-colors duration-200 text-white font-semibold py-2 px-5 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-red-400"
+                            style={{
+                                background: "#ef4444",
+                                color: "#fff",
+                                fontWeight: 600,
+                                padding: "8px 20px",
+                                borderRadius: "0.5rem",
+                                boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+                                border: "none",
+                                cursor: "pointer",
+                                transition: "background 0.2s",
+                            }}
+                            onMouseOver={e => (e.currentTarget.style.background = "#dc2626")}
+                            onMouseOut={e => (e.currentTarget.style.background = "#ef4444")}
                         >
                             Logout
                         </button>
                     )}
                 </div>
             </header>
-            <main className="pt-24 max-w-7xl mx-auto w-full">
+            <main
+                style={{
+                    paddingTop: "96px",
+                    maxWidth: "1120px",
+                    margin: "0 auto",
+                    width: "100%",
+                }}
+            >
                 {isAuthenticated ? (
-                    <div className="bg-white rounded-lg shadow p-8 mt-4">
+                    <div
+                        style={{
+                            background: "#fff",
+                            borderRadius: "0.5rem",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                            padding: "32px",
+                            marginTop: "16px",
+                        }}
+                    >
                         {children}
                     </div>
                 ) : (
-                    <div className="flex justify-center items-center min-h-[60vh]">
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            minHeight: "60vh",
+                        }}
+                    >
                         <AlMAuthPage />
                     </div>
                 )}

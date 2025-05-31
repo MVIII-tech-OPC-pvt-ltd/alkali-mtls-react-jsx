@@ -1,6 +1,4 @@
 import AlMFixedHeader from './AlMFixedHeader';
-import "../styles/styles.css";
-import "../styles/tailwind.css";
 
 /**
  * TemplateApp component serves as a template for the application.

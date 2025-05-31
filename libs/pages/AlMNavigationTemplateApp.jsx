@@ -1,6 +1,4 @@
 import { useState } from "react";
-import "../styles/styles.css";
-import "../styles/tailwind.css";
 
 /**
  * NavigationTemplateApp component serves as a template for the application with navigation.
@@ -19,32 +17,92 @@ function AlMNavigationTemplateApp({ navItems }) {
         setActivePageIndex(index);
     }
 
+    const navBarContainerStyle = {
+        marginBottom: "1.5rem"
+    };
+
+    const navBarStyle = {
+        display: "flex",
+        justifyContent: "center",
+        gap: "1.5rem"
+    };
+
+    const buttonBaseStyle = {
+        display: "flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        padding: "0.75rem 1.5rem",
+        fontWeight: 600,
+        borderRadius: "0.5rem",
+        boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+        transition: "all 0.3s",
+        border: "none",
+        cursor: "pointer",
+        fontSize: "1rem",
+        background: "#fff",
+        color: "#2563eb"
+    };
+
+    const buttonActiveStyle = {
+        background: "#2563eb",
+        color: "#fff",
+        transform: "scale(1.05)",
+        boxShadow: "0 4px 16px rgba(37,99,235,0.15)"
+    };
+
+    const buttonInactiveHoverStyle = {
+        background: "#eff6ff",
+        transform: "scale(1.05)"
+    };
+
+    const mainContainerStyle = {
+        padding: "2rem",
+        background: "#fff",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+        borderRadius: "1rem"
+    };
+
+    const appBgStyle = {
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
+        padding: "1.5rem"
+    };
+
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
-            <div className="nav-bar-container mb-6">
-                <div className="nav-bar flex justify-center gap-6">
+        <div style={appBgStyle}>
+            <div style={navBarContainerStyle}>
+                <div style={navBarStyle}>
                     {
                         ITEMS.map((val, idx) => {
+                            const isActive = idx === activePageIndex;
                             return (
                                 <button
                                     key={idx}
-                                    className={
-                                        "flex items-center gap-2 px-6 py-3 font-semibold rounded-lg shadow transition-all duration-300 " +
-                                        (idx === activePageIndex
-                                            ? "bg-blue-600 text-white scale-105 shadow-lg"
-                                            : "bg-white text-blue-700 hover:bg-blue-100 hover:scale-105")
-                                    }
+                                    style={{
+                                        ...buttonBaseStyle,
+                                        ...(isActive ? buttonActiveStyle : {}),
+                                    }}
+                                    onMouseOver={e => {
+                                        if (!isActive) {
+                                            Object.assign(e.currentTarget.style, buttonInactiveHoverStyle);
+                                        }
+                                    }}
+                                    onMouseOut={e => {
+                                        if (!isActive) {
+                                            Object.assign(e.currentTarget.style, buttonBaseStyle);
+                                        }
+                                    }}
                                     onClick={() => handleClick(idx)}
                                 >
-                                    <span className="icon text-xl">{val.icon}</span>
-                                    <span className="text">{val.text}</span>
+                                    <span style={{ fontSize: "1.25rem" }}>{val.icon}</span>
+                                    <span>{val.text}</span>
                                 </button>
                             );
                         })
                     }
                 </div>
             </div>
-            <div className="main-container p-8 bg-white shadow-xl rounded-2xl">
+            <div style={mainContainerStyle}>
                 {activePage}
             </div>
         </div>

@@ -1,9 +1,6 @@
 import { useContext, useState } from 'react';
 import './AuthPage.css';
 import { UsersHubContext } from '../contexts/UsersHub';
-import "../styles/styles.css";
-import "../styles/tailwind.css";
-
 
 /**
  * AuthenticationPage component renders a sign-in/sign-up form.
@@ -61,51 +58,179 @@ function AuthenticationPage({ appName = null }) {
     }
 
     return (
-        <div id='auth-page' className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 animate-fadeIn">
-            <div className="login-box w-full max-w-md p-10 space-y-8 bg-white/90 rounded-2xl shadow-2xl backdrop-blur-md border border-indigo-100 transition-all duration-500 hover:scale-105">
-                <h2 className="text-4xl font-extrabold text-center text-indigo-700 drop-shadow-sm">{title}</h2>
-                <form onSubmit={handleLogin} className="space-y-6">
-                    <div className="form-group">
-                        <label htmlFor="username" className="block text-sm font-semibold text-indigo-700">Username</label>
+        <div
+            id='auth-page'
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '100vh',
+                background: 'linear-gradient(135deg, #c7d2fe 0%, #e9d5ff 50%, #fbcfe8 100%)',
+                animation: 'fadeIn 1s'
+            }}
+        >
+            <div
+                style={{
+                    width: '100%',
+                    maxWidth: 400,
+                    padding: 40,
+                    background: 'rgba(255,255,255,0.9)',
+                    borderRadius: 24,
+                    boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid #c7d2fe',
+                    transition: 'transform 0.5s',
+                }}
+                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+            >
+                <h2
+                    style={{
+                        fontSize: 32,
+                        fontWeight: 800,
+                        textAlign: 'center',
+                        color: '#4338ca',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.07)'
+                    }}
+                >
+                    {title}
+                </h2>
+                <form onSubmit={handleLogin} style={{ marginTop: 32 }}>
+                    <div style={{ marginBottom: 24 }}>
+                        <label
+                            htmlFor="username"
+                            style={{
+                                display: 'block',
+                                fontSize: 14,
+                                fontWeight: 600,
+                                color: '#4338ca',
+                                marginBottom: 4
+                            }}
+                        >
+                            Username
+                        </label>
                         <input
                             type="text"
                             id="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
-                            className="w-full px-4 py-2 mt-1 border border-indigo-200 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50"
+                            style={{
+                                width: '100%',
+                                padding: '8px 16px',
+                                border: '1px solid #c7d2fe',
+                                borderRadius: 8,
+                                boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
+                                outline: 'none',
+                                background: '#eef2ff',
+                                fontSize: 16
+                            }}
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password" className="block text-sm font-semibold text-indigo-700">Password</label>
+                    <div style={{ marginBottom: 24 }}>
+                        <label
+                            htmlFor="password"
+                            style={{
+                                display: 'block',
+                                fontSize: 14,
+                                fontWeight: 600,
+                                color: '#4338ca',
+                                marginBottom: 4
+                            }}
+                        >
+                            Password
+                        </label>
                         <input
                             type="password"
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full px-4 py-2 mt-1 border border-indigo-200 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50"
+                            style={{
+                                width: '100%',
+                                padding: '8px 16px',
+                                border: '1px solid #c7d2fe',
+                                borderRadius: 8,
+                                boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
+                                outline: 'none',
+                                background: '#eef2ff',
+                                fontSize: 16
+                            }}
                         />
                     </div>
                     {title === AuthPageType.SIGN_UP && (
-                        <div className="form-group">
-                            <label htmlFor="confirmPassword" className="block text-sm font-semibold text-indigo-700">Confirm Password</label>
+                        <div style={{ marginBottom: 24 }}>
+                            <label
+                                htmlFor="confirmPassword"
+                                style={{
+                                    display: 'block',
+                                    fontSize: 14,
+                                    fontWeight: 600,
+                                    color: '#4338ca',
+                                    marginBottom: 4
+                                }}
+                            >
+                                Confirm Password
+                            </label>
                             <input
                                 type="password"
                                 id="confirmPassword"
                                 value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 required
-                                className="w-full px-4 py-2 mt-1 border border-indigo-200 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50"
+                                style={{
+                                    width: '100%',
+                                    padding: '8px 16px',
+                                    border: '1px solid #c7d2fe',
+                                    borderRadius: 8,
+                                    boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
+                                    outline: 'none',
+                                    background: '#eef2ff',
+                                    fontSize: 16
+                                }}
                             />
                         </div>
                     )}
-                    <button type="submit" className="w-full px-4 py-2 text-lg font-bold text-white bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg shadow hover:from-indigo-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400 transition">
+                    <button
+                        type="submit"
+                        style={{
+                            width: '100%',
+                            padding: '12px 16px',
+                            fontSize: 18,
+                            fontWeight: 700,
+                            color: '#fff',
+                            background: 'linear-gradient(90deg, #6366f1 0%, #ec4899 100%)',
+                            border: 'none',
+                            borderRadius: 8,
+                            boxShadow: '0 2px 8px rgba(99,102,241,0.15)',
+                            cursor: 'pointer',
+                            transition: 'background 0.2s'
+                        }}
+                        onMouseOver={e => e.currentTarget.style.background = 'linear-gradient(90deg, #4f46e5 0%, #db2777 100%)'}
+                        onMouseOut={e => e.currentTarget.style.background = 'linear-gradient(90deg, #6366f1 0%, #ec4899 100%)'}
+                    >
                         {title === AuthPageType.SIGN_IN ? 'Login' : 'Sign Up'}
                     </button>
-                    <div className="text-center">
-                        <button type="button" onClick={handleSwitch} className="text-indigo-600 font-medium hover:text-pink-500 focus:outline-none transition">
-                            {title === AuthPageType.SIGN_IN ? "Don't have an account? Create one" : "Already have an account? Sign in"}
+                    <div style={{ textAlign: 'center', marginTop: 16 }}>
+                        <button
+                            type="button"
+                            onClick={handleSwitch}
+                            style={{
+                                background: 'none',
+                                border: 'none',
+                                color: '#6366f1',
+                                fontWeight: 500,
+                                cursor: 'pointer',
+                                fontSize: 15,
+                                textDecoration: 'underline',
+                                transition: 'color 0.2s'
+                            }}
+                            onMouseOver={e => e.currentTarget.style.color = '#ec4899'}
+                            onMouseOut={e => e.currentTarget.style.color = '#6366f1'}
+                        >
+                            {title === AuthPageType.SIGN_IN
+                                ? "Don't have an account? Create one"
+                                : "Already have an account? Sign in"}
                         </button>
                     </div>
                 </form>
