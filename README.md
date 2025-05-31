@@ -1,4 +1,21 @@
-# React + Vite
+<div align="center">
+
+  <h1>Alkali-Mtls React + Vite Template</h1>
+  <p>
+    <strong>Welcome to the <span style="color:#38bdf8;">Alkali-Mtls</span> React + Vite starter!</strong>
+  </p>
+  <p>
+    This project provides a streamlined setup for building modern React applications with <b>Vite</b>, <b>Tailwind CSS</b>, and essential context providers for user and warehouse management.
+  </p>
+
+  <img src="https://vitejs.dev/logo.svg" alt="Vite Logo" width="50" style="margin: 1rem;">
+  <img src="https://react.dev/images/uwu.png" alt="React Logo" width="100" style="margin: 1rem;">
+  <img src="https://tailwindcss.com/favicons/favicon.ico" alt="Tailwind CSS Logo" width="50" style="margin: 1rem;">
+
+  <p><em>by : <a href="https://github.com/AvinashKumar3000">Avinash</a> <a href="https://www.mviiitech.com">[ MVIII TECH (OPC) Pvt Ltd ]</a></em></p>
+</div>
+
+---
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
