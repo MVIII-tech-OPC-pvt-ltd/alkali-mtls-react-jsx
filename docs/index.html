@@ -3,96 +3,103 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alkali mtls offical site</title>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
 </head>
 
 <body>
-    <h1 id="react-vite">React + Vite</h1>
-    <p>This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.</p>
-    <h2 id="how-to-use-it-">How to use it 👀</h2>
-    <hr>
-    <ul>
-        <li>install the package <code>npm i alkali-mtls</code></li>
-        <li>
-            <p>install dependencies <strong>Tailwind CSS</strong></p>
-            <ul>
-                <li><code>npm install tailwindcss @tailwindcss/vite</code></li>
-                <li>then for further steps follow this official tailwind css website</li>
-                <li>after installing tailwindcss you can use as example shown below. 😀</li>
-            </ul>
-        </li>
-        <li>
-            <p>Happy Hacking 🤠🤠🤠🧑‍💻</p>
-        </li>
-    </ul>
-    <hr>
-    <h2 id="documentation">Documentation</h2>
-    <p>For more detailed information on specific components and contexts used in this project, refer to the following
-        documentation:</p>
-    <ul>
-        <li><a href="#almtemplateapp">AlMTemplateApp</a>: The usage of ur AlMTemplateApp</li>
-        <li><a href="#usershub-context-documentation-">UsersHub Context Documentation</a>: Explains the
-            <code>UsersHubContext</code> for managing user authentication and user data.</li>
-        <li><a href="#warehouse-context-documentation">WareHouse Context Documentation</a>: Describes the
-            <code>WareHouseContext</code> for managing warehouse-related functionalities and state.</li>
-    </ul>
-    <p>Certainly! Let&#39;s break down how to use <code>AlMTemplateApp</code> and <code>AlMNavigationTemplateApp</code>
-        components in your React application.</p>
-    <h3 id="-almtemplateapp-"><code>AlMTemplateApp</code></h3>
-    <p><code>AlMTemplateApp</code> is a wrapper component that likely provides a common layout or styling for your
-        application. It takes a <code>title</code> prop and can wrap other components or content.</p>
-    <h3 id="-almnavigationtemplateapp-"><code>AlMNavigationTemplateApp</code></h3>
-    <p><code>AlMNavigationTemplateApp</code> is a component designed to handle navigation within your application. It
-        takes a <code>navItems</code> prop, which is an array of navigation items. Each navigation item is an object
-        with <code>icon</code>, <code>text</code>, and <code>component</code> properties.</p>
-    <h3 id="combined-usage-in-app-component">Combined Usage in App Component</h3>
-    <p>In your <code>App</code> component, you are combining these two components to create a structured layout with
-        navigation:</p>
-    <ul>
-        <li><code>AlMTemplateApp</code> provides the overall layout and title for the application.</li>
-        <li><code>AlMNavigationTemplateApp</code> handles the navigation, displaying different components based on the
-            selected navigation item.</li>
-    </ul>
-    <p>This structure helps in organizing your application into a cohesive layout with easy navigation.</p>
-    <h2 id="example-usage">Example Usage</h2>
-    <pre><code class="lang-jsx"><span class="hljs-keyword">import</span> { AlMNavigationTemplateApp, AlMTemplateApp } <span class="hljs-keyword">from</span> <span class="hljs-string">"alkali-mtls"</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">"./App.css"</span>;
+  <h1 id="react-vite" class="text-4xl font-bold text-blue-600 mb-4">React + Vite</h1>
+<p class="mb-4">This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> navItems = [
-    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"🏠"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Home"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Home Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
-    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"🔍"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Search"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Search Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
-    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"📄"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"About"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample About Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
-    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"📞"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Contact"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Contact Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
-    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"⚙️"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Settings"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Settings Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
+<h2 id="how-to-use-it-" class="text-2xl font-semibold text-gray-800 mt-6">How to use it 👀</h2>
+<hr class="my-4 border-gray-300">
+<ul class="list-disc list-inside space-y-2">
+  <li>Install the package <code class="bg-gray-100 px-2 py-1 rounded">npm i alkali-mtls</code></li>
+  <li>
+    <p><strong>Install dependencies: Tailwind CSS</strong></p>
+    <ul class="list-decimal list-inside ml-4 space-y-1">
+      <li><code class="bg-gray-100 px-2 py-1 rounded">npm install tailwindcss @tailwindcss/vite</code></li>
+      <li>Then follow the official Tailwind CSS documentation for further setup.</li>
+      <li>You can now use Tailwind classes like shown below. 😀</li>
+    </ul>
+  </li>
+  <li><p>Happy Hacking 🤠🤠🤠🧑‍💻</p></li>
+</ul>
+<hr class="my-4 border-gray-300">
+
+<h2 id="documentation" class="text-2xl font-semibold text-gray-800 mt-6">Documentation</h2>
+<p class="mb-4">For more detailed information on specific components and contexts used in this project, refer to:</p>
+<ul class="list-disc list-inside space-y-2">
+  <li><a href="#almtemplateapp" class="text-blue-500 hover:underline">AlMTemplateApp</a>: The usage of your AlMTemplateApp</li>
+  <li><a href="#usershub-context-documentation-" class="text-blue-500 hover:underline">UsersHub Context Documentation</a>: Manages <code class="bg-gray-100 px-1 rounded">UsersHubContext</code> for auth and user data.</li>
+  <li><a href="#warehouse-context-documentation" class="text-blue-500 hover:underline">WareHouse Context Documentation</a>: Manages <code class="bg-gray-100 px-1 rounded">WareHouseContext</code> state and logic.</li>
+</ul>
+
+<h3 id="-almtemplateapp-" class="text-xl font-semibold text-gray-700 mt-5"><code>AlMTemplateApp</code></h3>
+<p class="mb-2"><code class="bg-gray-100 px-1 rounded">AlMTemplateApp</code> provides a common layout or wrapper structure with a <code class="bg-gray-100 px-1 rounded">title</code> prop.</p>
+
+<h3 id="-almnavigationtemplateapp-" class="text-xl font-semibold text-gray-700 mt-5"><code>AlMNavigationTemplateApp</code></h3>
+<p class="mb-2">Designed to handle navigation using a <code class="bg-gray-100 px-1 rounded">navItems</code> array, each item includes <code class="bg-gray-100 px-1 rounded">icon</code>, <code class="bg-gray-100 px-1 rounded">text</code>, and <code class="bg-gray-100 px-1 rounded">component</code>.</p>
+
+<h3 id="combined-usage-in-app-component" class="text-xl font-semibold text-gray-700 mt-5">Combined Usage in App Component</h3>
+<p>Use both components to create a layout + navigation combo:</p>
+<ul class="list-disc list-inside space-y-1">
+  <li><code class="bg-gray-100 px-1 rounded">AlMTemplateApp</code> provides overall structure and title</li>
+  <li><code class="bg-gray-100 px-1 rounded">AlMNavigationTemplateApp</code> handles navigation logic</li>
+</ul>
+
+<h2 id="example-usage" class="text-2xl font-semibold text-gray-800 mt-6">Example Usage</h2>
+
+<pre class="bg-gray-900 text-white p-4 rounded overflow-x-auto"><code class="lang-jsx">
+import { AlMNavigationTemplateApp, AlMTemplateApp } from "alkali-mtls";
+import "./App.css";
+
+export default function App() {
+  const navItems = [
+    { icon: "🏠", text: "Home", component: &lt;h1 className="text-2xl font-bold"&gt;Sample Home Page&lt;/h1&gt; },
+    { icon: "🔍", text: "Search", component: &lt;h1 className="text-2xl font-bold"&gt;Sample Search Page&lt;/h1&gt; },
+    { icon: "📄", text: "About", component: &lt;h1 className="text-2xl font-bold"&gt;Sample About Page&lt;/h1&gt; },
+    { icon: "📞", text: "Contact", component: &lt;h1 className="text-2xl font-bold"&gt;Sample Contact Page&lt;/h1&gt; },
+    { icon: "⚙️", text: "Settings", component: &lt;h1 className="text-2xl font-bold"&gt;Sample Settings Page&lt;/h1&gt; },
   ];
-  <span class="hljs-keyword">return</span> (
+
+  return (
     &lt;&gt;
-      &lt;AlMTemplateApp title={"your application name here"}&gt;
-        {/* &lt;div className="container mx-auto p-4"&gt;
-          &lt;h2 className="text-xl font-bold"&gt;Welcome to My Application&lt;/h2&gt;
-          &lt;p&gt;This is the main content of the application.&lt;/p&gt;
-        &lt;/div&gt; */}
+      &lt;AlMTemplateApp title={"Your App Name"}&gt;
         &lt;AlMNavigationTemplateApp navItems={navItems} /&gt;
       &lt;/AlMTemplateApp&gt;
     &lt;/&gt;
   );
 }
 </code></pre>
-    <hr>
-    <h3 id="usershub-context-documentation-">UsersHub-Context-Documentation 🚀</h3>
-    <h2 id="introduction">Introduction</h2>
-    <p>The <code>UsersHubContext</code> provides a way to manage user authentication and user data within your React
-        application. This context includes functionalities for logging in, logging out, and creating new users.</p>
-    <h2 id="setup-">Setup 🛠️</h2>
-    <p>To use the <code>UsersHubContext</code>, you need to wrap your application (or part of it) with the
-        <code>UsersHubProvider</code>.</p>
-    <h3 id="example">Example</h3>
-    <pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
-<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">"react-dom"</span>;
-<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">"./App"</span>;
-<span class="hljs-keyword">import</span> { UsersHubProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"./contexts/UsersHub"</span>;
+
+<hr class="my-6 border-gray-300">
+<h3 id="usershub-context-documentation-" class="text-xl font-semibold text-gray-700">UsersHub Context Documentation 🚀</h3>
+
+<h2 id="introduction" class="text-xl font-bold mt-4 text-gray-800">Introduction</h2>
+<p><code class="bg-gray-100 px-1 rounded">UsersHubContext</code> is used to manage authentication and user state in React.</p>
+
+<h2 id="setup-" class="text-xl font-bold mt-4 text-gray-800">Setup 🛠️</h2>
+<p>Wrap your app (or a part of it) with <code class="bg-gray-100 px-1 rounded">UsersHubProvider</code>:</p>
+
+<pre class="bg-gray-900 text-white p-4 rounded overflow-x-auto"><code class="lang-jsx">
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { UsersHubProvider } from "./contexts/UsersHub";
+
+ReactDOM.render(
+  &lt;UsersHubProvider&gt;
+    &lt;App /&gt;
+  &lt;/UsersHubProvider&gt;,
+  document.getElementById("root")
+);
+</code></pre>
 
 ReactDOM.render(
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">UsersHubProvider</span>&gt;</span>
@@ -268,7 +275,9 @@ function App() {
     );
 }
 </code></pre>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
 
+<script>hljs.highlightAll();</script>
 </body>
 
 </html>
