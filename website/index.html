@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alkali mtls offical site</title>
+</head>
+
+<body>
+    <h1 id="react-vite">React + Vite</h1>
+    <p>This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.</p>
+    <h2 id="how-to-use-it-">How to use it 👀</h2>
+    <hr>
+    <ul>
+        <li>install the package <code>npm i alkali-mtls</code></li>
+        <li>
+            <p>install dependencies <strong>Tailwind CSS</strong></p>
+            <ul>
+                <li><code>npm install tailwindcss @tailwindcss/vite</code></li>
+                <li>then for further steps follow this official tailwind css website</li>
+                <li>after installing tailwindcss you can use as example shown below. 😀</li>
+            </ul>
+        </li>
+        <li>
+            <p>Happy Hacking 🤠🤠🤠🧑‍💻</p>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="documentation">Documentation</h2>
+    <p>For more detailed information on specific components and contexts used in this project, refer to the following
+        documentation:</p>
+    <ul>
+        <li><a href="#almtemplateapp">AlMTemplateApp</a>: The usage of ur AlMTemplateApp</li>
+        <li><a href="#usershub-context-documentation-">UsersHub Context Documentation</a>: Explains the
+            <code>UsersHubContext</code> for managing user authentication and user data.</li>
+        <li><a href="#warehouse-context-documentation">WareHouse Context Documentation</a>: Describes the
+            <code>WareHouseContext</code> for managing warehouse-related functionalities and state.</li>
+    </ul>
+    <p>Certainly! Let&#39;s break down how to use <code>AlMTemplateApp</code> and <code>AlMNavigationTemplateApp</code>
+        components in your React application.</p>
+    <h3 id="-almtemplateapp-"><code>AlMTemplateApp</code></h3>
+    <p><code>AlMTemplateApp</code> is a wrapper component that likely provides a common layout or styling for your
+        application. It takes a <code>title</code> prop and can wrap other components or content.</p>
+    <h3 id="-almnavigationtemplateapp-"><code>AlMNavigationTemplateApp</code></h3>
+    <p><code>AlMNavigationTemplateApp</code> is a component designed to handle navigation within your application. It
+        takes a <code>navItems</code> prop, which is an array of navigation items. Each navigation item is an object
+        with <code>icon</code>, <code>text</code>, and <code>component</code> properties.</p>
+    <h3 id="combined-usage-in-app-component">Combined Usage in App Component</h3>
+    <p>In your <code>App</code> component, you are combining these two components to create a structured layout with
+        navigation:</p>
+    <ul>
+        <li><code>AlMTemplateApp</code> provides the overall layout and title for the application.</li>
+        <li><code>AlMNavigationTemplateApp</code> handles the navigation, displaying different components based on the
+            selected navigation item.</li>
+    </ul>
+    <p>This structure helps in organizing your application into a cohesive layout with easy navigation.</p>
+    <h2 id="example-usage">Example Usage</h2>
+    <pre><code class="lang-jsx"><span class="hljs-keyword">import</span> { AlMNavigationTemplateApp, AlMTemplateApp } <span class="hljs-keyword">from</span> <span class="hljs-string">"alkali-mtls"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"./App.css"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> navItems = [
+    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"🏠"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Home"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Home Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
+    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"🔍"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Search"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Search Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
+    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"📄"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"About"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample About Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
+    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"📞"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Contact"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Contact Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
+    { <span class="hljs-attr">icon</span>: <span class="hljs-string">"⚙️"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"Settings"</span>, <span class="hljs-attr">component</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Sample Settings Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span> },
+  ];
+  <span class="hljs-keyword">return</span> (
+    &lt;&gt;
+      &lt;AlMTemplateApp title={"your application name here"}&gt;
+        {/* &lt;div className="container mx-auto p-4"&gt;
+          &lt;h2 className="text-xl font-bold"&gt;Welcome to My Application&lt;/h2&gt;
+          &lt;p&gt;This is the main content of the application.&lt;/p&gt;
+        &lt;/div&gt; */}
+        &lt;AlMNavigationTemplateApp navItems={navItems} /&gt;
+      &lt;/AlMTemplateApp&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+    <hr>
+    <h3 id="usershub-context-documentation-">UsersHub-Context-Documentation 🚀</h3>
+    <h2 id="introduction">Introduction</h2>
+    <p>The <code>UsersHubContext</code> provides a way to manage user authentication and user data within your React
+        application. This context includes functionalities for logging in, logging out, and creating new users.</p>
+    <h2 id="setup-">Setup 🛠️</h2>
+    <p>To use the <code>UsersHubContext</code>, you need to wrap your application (or part of it) with the
+        <code>UsersHubProvider</code>.</p>
+    <h3 id="example">Example</h3>
+    <pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">"react-dom"</span>;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">"./App"</span>;
+<span class="hljs-keyword">import</span> { UsersHubProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"./contexts/UsersHub"</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">UsersHubProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">UsersHubProvider</span>&gt;</span></span>,
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"root"</span>)
+);
+</code></pre>
+    <h2 id="usage-">Usage 📚</h2>
+    <p>You can access the context values using the <code>useContext</code> hook.</p>
+    <h3 id="example">Example</h3>
+    <pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React, { useContext } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { UsersHubContext } <span class="hljs-keyword">from</span> <span class="hljs-string">"./contexts/UsersHub"</span>;
+
+<span class="hljs-keyword">const</span> AuthPage = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> { users, isAuthenticated, login, logout, createNewUser } =
+    useContext(UsersHubContext);
+
+  <span class="hljs-keyword">const</span> handleLogin = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> username = <span class="hljs-string">"john"</span>;
+    <span class="hljs-keyword">const</span> password = <span class="hljs-string">"John@123"</span>;
+    <span class="hljs-keyword">if</span> (login(username, password)) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Login successful"</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Login failed"</span>);
+    }
+  };
+
+  <span class="hljs-keyword">const</span> handleLogout = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    logout();
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Logged out"</span>);
+  };
+
+  <span class="hljs-keyword">const</span> handleCreateUser = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> username = <span class="hljs-string">"newuser"</span>;
+    <span class="hljs-keyword">const</span> password = <span class="hljs-string">"NewUser@123"</span>;
+    createNewUser(username, password);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"User created"</span>);
+  };
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Auth Page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handleLogin}</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handleLogout}</span>&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handleCreateUser}</span>&gt;</span>Create User<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Users List<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+          {users.map((user) =&gt; (
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{user.id}</span>&gt;</span>{user.username}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          ))}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Authentication Status<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{isAuthenticated ? "Authenticated" : "Not Authenticated"}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> AuthPage;
+</code></pre>
+    <h2 id="context-values-">Context Values 📦</h2>
+    <ul>
+        <li><code>users</code>: An array of user objects.</li>
+        <li><code>isAuthenticated</code>: A boolean indicating if a user is authenticated.</li>
+        <li><code>login(username, password)</code>: A function to log in a user.</li>
+        <li><code>logout()</code>: A function to log out the current user.</li>
+        <li><code>createNewUser(username, password)</code>: A function to create a new user.</li>
+    </ul>
+    <h2 id="initial-data-">Initial Data 🗂️</h2>
+    <p>The context initializes with the following user data:</p>
+    <pre><code class="lang-json">[
+  { <span class="hljs-attr">"id"</span>: <span class="hljs-number">452103</span>, <span class="hljs-attr">"username"</span>: <span class="hljs-string">"ram"</span>, <span class="hljs-attr">"password"</span>: <span class="hljs-string">"Ram@123"</span> },
+  { <span class="hljs-attr">"id"</span>: <span class="hljs-number">97301</span>, <span class="hljs-attr">"username"</span>: <span class="hljs-string">"john"</span>, <span class="hljs-attr">"password"</span>: <span class="hljs-string">"John@123"</span> },
+  { <span class="hljs-attr">"id"</span>: <span class="hljs-number">36987</span>, <span class="hljs-attr">"username"</span>: <span class="hljs-string">"jane"</span>, <span class="hljs-attr">"password"</span>: <span class="hljs-string">"Jane@123"</span> },
+  { <span class="hljs-attr">"id"</span>: <span class="hljs-number">840808</span>, <span class="hljs-attr">"username"</span>: <span class="hljs-string">"alice"</span>, <span class="hljs-attr">"password"</span>: <span class="hljs-string">"Alice@123"</span> },
+  { <span class="hljs-attr">"id"</span>: <span class="hljs-number">769999</span>, <span class="hljs-attr">"username"</span>: <span class="hljs-string">"bob"</span>, <span class="hljs-attr">"password"</span>: <span class="hljs-string">"Bob@123"</span> }
+]
+</code></pre>
+    <h2 id="conclusion-">Conclusion 🎉</h2>
+    <p>The <code>UsersHubContext</code> is a powerful tool for managing user authentication and user data in your React
+        application. By following the setup and usage instructions, you can easily integrate it into your project.</p>
+    <hr>
+    <h3 id="warehouse-context-documentation">WareHouse Context Documentation</h3>
+    <h2 id="overview">Overview</h2>
+    <p>The <code>WareHouseContext</code> provides warehouse-related functionalities and state management for your
+        application. It allows you to add, retrieve, update, and delete items in the warehouse, as well as manage items
+        based on user IDs.</p>
+    <h2 id="usage">Usage</h2>
+    <p>To use the <code>WareHouseContext</code>, wrap your component tree with the <code>WareHouseProvider</code>:</p>
+    <pre><code class="lang-jsx">import { WareHouseProvider } from './contexts/WareHouse';
+
+function App() {
+  return (
+    &lt;WareHouseProvider&gt;
+      &lt;YourComponent /&gt;
+    &lt;/WareHouseProvider&gt;
+  );
+}
+
+## API
+
+### WareHouseProvider
+
+The `WareHouseProvider` component provides the context to its children.
+
+#### Props
+
+-<span class="ruby"> **children** (<span class="hljs-string">`React.ReactNode`</span>): The child components.
+</span>
+#### Context Methods
+
+-<span class="ruby"> **addItem(item)**
+</span>    -<span class="ruby"> Adds a new item to the warehouse.
+</span>    -<span class="ruby"> **item** (<span class="hljs-string">`Object`</span>): The item to be added.
+</span>    -<span class="ruby"> **id** (<span class="hljs-string">`string`</span>, optional): The unique identifier of the item. If <span class="hljs-keyword">not</span> provided, a unique ID will be generated.
+</span>    -<span class="ruby"> **userId** (<span class="hljs-string">`string`</span>): The ID of the user who owns the item.
+</span>
+-<span class="ruby"> **getItemById(id)**
+</span>    -<span class="ruby"> Retrieves an item by its ID.
+</span>    -<span class="ruby"> **id** (<span class="hljs-string">`string`</span>): The unique identifier of the item.
+</span>    -<span class="ruby"> **Returns**: The item with the specified ID, <span class="hljs-keyword">or</span> <span class="hljs-string">`undefined`</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> found.
+</span>
+-<span class="ruby"> **getItemsByUserId(userId)**
+</span>    -<span class="ruby"> Retrieves items by a user<span class="hljs-string">'s ID.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **userId** (`string`): The ID of the user.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **Returns**: An array of items owned by the specified user.
+</span></span>
+-<span class="ruby"><span class="hljs-string"> **updateItem(updatedItem)**
+</span></span>    -<span class="ruby"><span class="hljs-string"> Updates an existing item in the warehouse.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **updatedItem** (`Object`): The item with updated properties.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **id** (`string`): The unique identifier of the item to be updated.
+</span></span>
+-<span class="ruby"><span class="hljs-string"> **updateItemsByUserId(userId, updatedItems)**
+</span></span>    -<span class="ruby"><span class="hljs-string"> Updates multiple items for a specific user.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **userId** (`string`): The ID of the user.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **updatedItems** (`Object[]`): An array of updated items.
+</span></span>
+-<span class="ruby"><span class="hljs-string"> **deleteItem(id)**
+</span></span>    -<span class="ruby"><span class="hljs-string"> Deletes an item from the warehouse.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **id** (`string`): The unique identifier of the item to be deleted.
+</span></span>
+-<span class="ruby"><span class="hljs-string"> **deleteItemsByUserId(userId)**
+</span></span>    -<span class="ruby"><span class="hljs-string"> Deletes all items for a specific user.
+</span></span>    -<span class="ruby"><span class="hljs-string"> **userId** (`string`): The ID of the user whose items should be deleted.
+</span></span>
+### Example
+
+```jsx
+import { WareHouseProvider, useWareHouseContext } from './contexts/WareHouse';
+
+function YourComponent() {
+    const { addItem, getItemById, getItemsByUserId, updateItem, deleteItem } = useWareHouseContext();
+<span class="hljs-comment">
+    // Example usage of context methods</span>
+<span class="hljs-comment">    // addItem({ name: 'Item 1', userId: 'user123' });</span>
+<span class="hljs-comment">    // const item = getItemById('item123');</span>
+<span class="hljs-comment">    // const userItems = getItemsByUserId('user123');</span>
+<span class="hljs-comment">    // updateItem({ id: 'item123', name: 'Updated Item 1' });</span>
+<span class="hljs-comment">    // deleteItem('item123');</span>
+
+    return &lt;div&gt;Your Component&lt;/div&gt;;
+}
+
+function App() {
+    return (
+        &lt;WareHouseProvider&gt;
+            &lt;YourComponent /&gt;
+        &lt;/WareHouseProvider&gt;
+    );
+}
+</code></pre>
+
+</body>
+
+</html>
