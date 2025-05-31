@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react';
 import './AuthPage.css';
 import { UsersHubContext, UsersHubProvider } from '../contexts/UsersHub';
+import "../styles/styles.css";
+import "../styles/tailwind.css";
+
 
 /**
  * AuthenticationPage component renders a sign-in/sign-up form.

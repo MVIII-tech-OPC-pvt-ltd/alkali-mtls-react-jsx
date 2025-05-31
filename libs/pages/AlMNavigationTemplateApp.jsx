@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/styles.css";
+import "../styles/tailwind.css";
 
 /**
  * NavigationTemplateApp component serves as a template for the application with navigation.

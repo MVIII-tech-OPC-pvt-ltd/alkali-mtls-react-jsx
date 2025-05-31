@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import AlMAuthPage from './AlMAuthPage';
 import { UsersHubContext, UsersHubProvider } from '../contexts/UsersHub';
+import "../styles/styles.css";
+import "../styles/tailwind.css";
 
 /**
  * FixedHeader component renders a fixed header with a gradient background and a title.
