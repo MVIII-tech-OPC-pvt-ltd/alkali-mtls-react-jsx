@@ -18,26 +18,30 @@ function FixedHeader({ children, title }) {
     const { isAuthenticated, logout } = useContext(UsersHubContext);
 
     return (
-        <div>
-            <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-md z-50">
-                <div className="container mx-auto p-4 flex justify-between items-center">
-                    <h1 className="text-2xl font-bold">{title}</h1>
+        <div className="min-h-screen bg-gray-50">
+            <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-purple-600 via-blue-500 to-blue-700 text-white shadow-lg z-50">
+                <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                    <h1 className="text-3xl font-extrabold tracking-tight">{title}</h1>
                     {isAuthenticated && (
                         <button
                             onClick={logout}
-                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                            className="bg-red-500 hover:bg-red-600 transition-colors duration-200 text-white font-semibold py-2 px-5 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-red-400"
                         >
                             Logout
                         </button>
                     )}
                 </div>
             </header>
-            <main className="pt-16">
+            <main className="pt-24 max-w-7xl mx-auto w-full">
                 {isAuthenticated ? (
-                    <div className='bg-white'>
+                    <div className="bg-white rounded-lg shadow p-8 mt-4">
                         {children}
                     </div>
-                ) : <AlMAuthPage />}
+                ) : (
+                    <div className="flex justify-center items-center min-h-[60vh]">
+                        <AlMAuthPage />
+                    </div>
+                )}
             </main>
         </div>
     );

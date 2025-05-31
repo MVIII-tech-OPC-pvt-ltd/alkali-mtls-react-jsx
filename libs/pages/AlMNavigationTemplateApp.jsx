@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/styles.css";
 import "../styles/tailwind.css";
 
@@ -20,27 +20,31 @@ function AlMNavigationTemplateApp({ navItems }) {
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <div className="nav-bar-container">
-                <div className="nav-bar flex justify-center space-x-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+            <div className="nav-bar-container mb-6">
+                <div className="nav-bar flex justify-center gap-6">
                     {
                         ITEMS.map((val, idx) => {
                             return (
-                                <div
+                                <button
                                     key={idx}
-                                    className={"flex pl-5 pr-5 item cursor-pointer p-2 rounded transition duration-300 ease-in-out transform " +
-                                        (idx === activePageIndex ? "bg-blue-500 text-white" : "bg-gray-200 text-black hover:bg-blue-300 hover:scale-105")}
+                                    className={
+                                        "flex items-center gap-2 px-6 py-3 font-semibold rounded-lg shadow transition-all duration-300 " +
+                                        (idx === activePageIndex
+                                            ? "bg-blue-600 text-white scale-105 shadow-lg"
+                                            : "bg-white text-blue-700 hover:bg-blue-100 hover:scale-105")
+                                    }
                                     onClick={() => handleClick(idx)}
                                 >
-                                    <div className="icon">{val.icon}</div>
-                                    <div className="text">{val.text}</div>
-                                </div>
+                                    <span className="icon text-xl">{val.icon}</span>
+                                    <span className="text">{val.text}</span>
+                                </button>
                             );
                         })
                     }
                 </div>
             </div>
-            <div className="main-container mt-4 p-4 bg-white shadow rounded">
+            <div className="main-container p-8 bg-white shadow-xl rounded-2xl">
                 {activePage}
             </div>
         </div>

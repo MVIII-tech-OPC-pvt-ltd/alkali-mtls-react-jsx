@@ -1,4 +1,3 @@
-import React from 'react';
 import AlMFixedHeader from './AlMFixedHeader';
 import "../styles/styles.css";
 import "../styles/tailwind.css";
