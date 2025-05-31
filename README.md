@@ -209,6 +209,7 @@ function App() {
     </WareHouseProvider>
   );
 }
+```
 
 ## API
 
@@ -221,6 +222,7 @@ The `WareHouseProvider` component provides the context to its children.
 - **children** (`React.ReactNode`): The child components.
 
 #### Context Methods
+
 
 - **addItem(item)**
     - Adds a new item to the warehouse.
@@ -255,6 +257,7 @@ The `WareHouseProvider` component provides the context to its children.
 - **deleteItemsByUserId(userId)**
     - Deletes all items for a specific user.
     - **userId** (`string`): The ID of the user whose items should be deleted.
+```
 
 ### Example
 
