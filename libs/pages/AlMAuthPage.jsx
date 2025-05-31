@@ -65,7 +65,6 @@ function AuthenticationPage({ appName = null }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: '100vh',
-                background: 'linear-gradient(135deg, #c7d2fe 0%, #e9d5ff 50%, #fbcfe8 100%)',
                 animation: 'fadeIn 1s'
             }}
         >
